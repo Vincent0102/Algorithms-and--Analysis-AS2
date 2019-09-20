@@ -35,7 +35,7 @@ In the standard Battleship game, there are five ships available for each side. F
 
 The project is broken up into a number of tasks to help you progress. Task A is to develop a random guessing algorithm as an initial attempt at a Battleship playing agent. Task B and C develops more sophisticated algorithms to play Battleship. For details on how each task will be assessed, please see the \Assessment" section.
 
-To help you understand the tasks better, we will use the example illustrated in Figure 1, which is a Battleship game played on a 10 by 10 grid
+To help you understand the tasks better, we will use the example illustrated in Figure 1, which is a Battleship game played on a 10 by 10 grid.
 
 # Task A: Implement Random Guessing Player
 
@@ -43,9 +43,9 @@ In this task, your group will implement a random guessing player for Battleship,
 
 # Task B: Implement Greedy Guessing Player
 
-In this task, your group will make two improvements to the random guessing player. First one is rather than randomly guess, we can utilise the fact that the ships are at least 2 cells long and use the partiy principle. See Figure 3a. As ships are at least of length 2, the player do not need to fire at every cell to ensure we eventually find the opponent’s ships. It just need to fire at every 2nd square (Figure 3a). Hence, when hunting for one of the opponent’s ships, it can now randonly select a cell from this checkboard type of pattern
+In this task, your group will make two improvements to the random guessing player. First one is rather than randomly guess, we can utilise the fact that the ships are at least 2 cells long and use the partiy principle. See Figure 3a. As ships are at least of length 2, the player do not need to fire at every cell to ensure we eventually find the opponent’s ships. It just need to fire at every 2nd square (Figure 3a). Hence, when hunting for one of the opponent’s ships, it can now randonly select a cell from this checkboard type of pattern.
 
-The second improvement is to implement more sophicated behaviour once we have a hit. We now divide the process into two parts: hunting mode, where the player is seeking opponent’s ships (for this task B type of player, they will use the parity guessing improvement), and targeting mode, where once there is a hit, the player greedily tries to sink the partially hit/damaged ship. For the targeting mode, once a cell register a hit, we know the rest of the ship must be in one of the four adjacent cells, as highlighted as oranged circles in Figure 3b. The player seeks to destroy the ship before moving on, hence will try to fire at those four possible cells first (assuming they haven’t been fired upon, if they have, then no need to fire at a cell twice). Once all possible targeting cells have been exhausted, the player can be sure to have sunk the ship(s) (can be more than one if ships are adjacent to each other) and it returns to the hunting mode until it finds the next ship
+The second improvement is to implement more sophicated behaviour once we have a hit. We now divide the process into two parts: hunting mode, where the player is seeking opponent’s ships (for this task B type of player, they will use the parity guessing improvement), and targeting mode, where once there is a hit, the player greedily tries to sink the partially hit/damaged ship. For the targeting mode, once a cell register a hit, we know the rest of the ship must be in one of the four adjacent cells, as highlighted as oranged circles in Figure 3b. The player seeks to destroy the ship before moving on, hence will try to fire at those four possible cells first (assuming they haven’t been fired upon, if they have, then no need to fire at a cell twice). Once all possible targeting cells have been exhausted, the player can be sure to have sunk the ship(s) (can be more than one if ships are adjacent to each other) and it returns to the hunting mode until it finds the next ship.
 
 # Task C: Implement Probabilistic Guessing Player
 
@@ -95,12 +95,11 @@ The ship location file specifies the location of the ships of each player. It is
 The values are separated by space.
 
 Ship names are one of fPatrolCraft, Cruiser, Submarine, Frigate, AircraftCarrierg. Directions are one
-of fN (North), S (South), E (East), W (West)g
+of {N (North), S (South), E (East), W (West)}
 
 An example ship location file is as follows:
 
-AircraftCarrier 1 1 E S
-
-Frigate 2 5 S E
+    AircraftCarrier 1 1 E S
+    Frigate 2 5 S E
 
 For more detail read assignment2.pdf
